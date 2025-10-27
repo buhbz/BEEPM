@@ -7,7 +7,7 @@ A work-in-progress rhythm analysis tool designed for osu!standard players who wa
 
 ### 🧭 Core Functionality
 
-*Real-time BPM calculation using high-precision timing between keypresses.
+* Real-time BPM calculation using high-precision timing between keypresses.
 
 *  Supports typical osu! stream input (Z/X).
 
