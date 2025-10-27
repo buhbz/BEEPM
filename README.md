@@ -2,6 +2,20 @@
 
 A work-in-progress rhythm analysis tool designed for osu!standard players who want to understand and improve their tapping consistency, stream control, and stamina.
 
+## What is BEEPM?
+
+BEEPM is a console-based stream BPM and rhythm analyzer for osu! players.
+
+It lets you:
+
+* Perform tap-based BPM tests to measure your streaming speed.
+
+* Track timing intervals and compute an average BPM based on actual tap consistency.
+
+* Visualize your performance with a simple ASCII graph showing BPM fluctuation over time.
+
+* Unlike other single-purpose BPM testers, BEEPM aims to become a full training and analysis toolkit — blending timing precision, feedback, and data visualization for serious rhythm improvement.
+
 
 ## ⚡ Current Features
 
@@ -34,3 +48,17 @@ A work-in-progress rhythm analysis tool designed for osu!standard players who wa
 * Input validation for safe user experience.
 
 * UTF-8 enabled for wide symbol support.
+
+
+## 🧰 Building & Running
+
+**Requirements**
+* Windows OS (uses <conio.h> and SetConsoleTitle).
+* C++17 or later.
+* Any compiler supporting the standard (MSVC, MinGW, etc).
+
+**Build**
+> g++ -std=c++17 -O2 beepm.cpp -o beepm
+
+Run
+> ./beepm
