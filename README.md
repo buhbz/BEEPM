@@ -1,4 +1,3 @@
-# BEEPM
-lightweight C++ terminal app for measuring your beats per minute (BPM) based on key presses.
+🌀 BEEPM — The osu! Stream BPM Tester
 
-**early stages**
+A work-in-progress rhythm analysis tool designed for osu!standard players who want to understand and improve their tapping consistency, stream control, and stamina.
