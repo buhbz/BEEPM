@@ -14,8 +14,6 @@ It lets you:
 
 * Visualize your performance with a simple ASCII graph showing BPM fluctuation over time.
 
-* Unlike other single-purpose BPM testers, BEEPM aims to become a full training and analysis toolkit — blending timing precision, feedback, and data visualization for serious rhythm improvement.
-
 
 ## ⚡ Current Features
 
