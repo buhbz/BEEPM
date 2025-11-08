@@ -1,62 +1,101 @@
-# **🌀 BEEPM — The osu! Stream BPM Tester**
+# 🌀 BEEPM — The osu! Stream BPM Tester
 
-A work-in-progress rhythm analysis tool designed for osu!standard players who want to understand and improve their tapping consistency, stream control, and stamina.
+A rhythm analysis and training tool designed for **osu!standard** players who want to understand and improve their **tapping consistency**, **stream control**, and **stamina**.
 
-## What is BEEPM?
+---
 
-BEEPM is a console-based stream BPM and rhythm analyzer for osu! players.
+## 💡 What is BEEPM?
 
-It lets you:
+**BEEPM** is a console-based stream BPM and rhythm analyzer for osu! players, speed-tappers, and rhythm enthusiasts.
 
-* Perform tap-based BPM tests to measure your streaming speed.
+It allows you to:
+- Perform tap-based BPM and consistency tests to measure your stream speed and accuracy.
+- Track timing intervals between taps and compute average BPM and consistency (UR).
+- Visualize rhythm stability over time with an ASCII-based BPM graph.
+- Save and review your progress with detailed logging.
 
-* Track timing intervals and compute an average BPM based on actual tap consistency.
-
-* Visualize your performance with a simple ASCII graph showing BPM fluctuation over time.
-
+---
 
 ## ⚡ Current Features
 
 ### 🧭 Core Functionality
+- **Real-time BPM calculation** using high-precision timing between keypresses.
+- **Fully configurable input keys** (default: `Z` / `X`), stored in `config.toml`.
+- **Adjustable Taps-Per-Beat (TPB)** setting for custom rhythm patterns (default: `4` for 1/4 osu! streams).
+- **Three training modes:**
+  - **Normal Mode** – Tap a fixed number of times (20–1000) to measure speed bursts.
+  - **Timed Mode** – Tap for a set duration (5–600s) to build endurance.
+  - **Endurance Mode** – Maintain a chosen BPM as long as possible before dropping below it.
+- **Detailed statistics** per test:
+  - BPM  
+  - Unstable Rate (UR)  
+  - Consistency percentage  
+  - Stream Skill rating (SR)
 
-* Real-time BPM calculation using high-precision timing between keypresses.
-
-*  Supports typical osu! stream input (Z/X).
-
-* Adjustable test length (20–1000 taps).
-
-* Displays detailed timing per tap (Δt in seconds).
+---
 
 ### 📊 BPM Graph Visualization
+- After each session, BEEPM renders a clean ASCII graph showing **BPM stability**.
+- Visually indicates rhythm fluctuations:
+  - Smooth = consistent tapping  
+  - Jagged = unstable tempo or fatigue onset  
 
-* After each test, BEEPM renders a text-based BPM graph in the console.
+---
 
-* Visually shows fluctuations in your BPM — smooth = stable tapping, spikes = inconsistency.
+### 📈 Progress Tracking
+- Automatically saves all session data to `results.csv`:
+  - Timestamp  
+  - Mode  
+  - BPM, UR, Consistency  
+  - Score  
+  - Tap count  
+  - Duration  
+- Built-in **Previous Scores** viewer lets you review past performance directly in-app.
 
-### 🧮 Stable Interval Math
+---
 
-* Calculates BPM using tap intervals for higher accuracy.
+### ⚙️ Settings System
+- Configurable via `config.toml`:
+  - Rebind tap keys.  
+  - Adjust TPB (1–8).  
+- In-app **Settings Editor** for modifying and saving configuration.
+- Safe saving mechanism with temporary file protection.
 
-* Uses an adjustable TPB (Taps Per Beat) factor (4 by default for 1/4 osu! streams).
+---
 
 ### 💬 Interactive Console
+- Clean, modern ASCII-art menu with six options:
+  1. Start (Normal Mode)
+  2. Timed Mode
+  3. Endurance Mode
+  4. Previous Scores
+  5. Settings
+  6. Exit
+- Validates all inputs to prevent errors.
 
-* Clean ASCII art main menu.
+---
 
-* Input validation for safe user experience.
+## 🧠 How It Helps You Improve
+BEEPM gives you **real, quantifiable feedback** on your rhythm performance:
+- **BPM** – measures raw speed.
+- **UR (Unstable Rate)** – shows precision; lower is better.
+- **Consistency %** – stability metric based on timing deviation.
+- **SR (Stream Skill Rating)** – overall performance score factoring in speed, stability, and endurance.
 
-* UTF-8 enabled for wide symbol support.
+By tracking your results over time, you can:
+- Identify your **speed limits** and **fatigue thresholds**.
+- Train **tempo control** and **finger independence**.
+- Objectively monitor your improvement.
 
+---
 
 ## 🧰 Building & Running
 
-**Requirements**
-* Windows OS (uses <conio.h> and SetConsoleTitle).
-* C++17 or later.
-* Any compiler supporting the standard (MSVC, MinGW, etc).
+### 🪟 Requirements
+- Windows OS (uses `<conio.h>` and `SetConsoleTitle`).
+- C++17 or newer.
+- Any compiler supporting the standard (MSVC, MinGW, etc.).
 
-**Build**
-> g++ -std=c++17 -O2 beepm.cpp -o beepm
-
-Run
-> ./beepm
+### 🏗️ Build
+```bash
+g++ -std=c++17 -O2 main.cpp -o beepm
